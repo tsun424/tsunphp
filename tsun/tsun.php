@@ -9,7 +9,7 @@
 	************************************************************************
 	*	update time			editor				updated information
 	*	2015-09-29			Xiaoming Yang		change the path from relative to absolute
-	*
+	*   2015-09-30          Xiaoming Yang       include Load class to realise autoload class function
 	*
 	*/
 	

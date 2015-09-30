@@ -16,8 +16,7 @@
 	
 	//define system constant variables
 	define("SLASH","/");									//the slash separator
-	define("TSUN_PATH",BASE_PATH.SLASH."tsun".SLASH);		//the framework abosolute path
-	define("APP_PATH",APP.SLASH);							//the application abosolute path
+	define("TSUN_PATH",BASE_PATH.SLASH."tsun");		        //the framework abosolute path
 	define("ROOT_FILE",$_SERVER['SCRIPT_NAME']);			//the currently executing script. it is for views 
 	
 	function __autoload($className){
@@ -25,11 +24,11 @@
 		//echo "$className.php is included.<br>";
 	}
 	
-	$controllerDir = APP_PATH."controller";
+	$controllerDir = APP_PATH.SLASH."controller";
 	
 	$include_path = get_include_path();
 	$include_path .= PATH_SEPARATOR.$controllerDir;
-	$include_path .= PATH_SEPARATOR.TSUN_PATH."base";
+	$include_path .= PATH_SEPARATOR.TSUN_PATH.SLASH."base";
 	
 	set_include_path($include_path);
 

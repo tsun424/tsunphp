@@ -3,6 +3,7 @@
 /**
  *	configuration files for all service controllers
  *  format: 'controllerName' => 'controller relative path'
+ *  example: 'user' => 'user/UserController.php'
  *  The path is relative to controller directory in APP_PATH
  ************************************************************************
  *	@Author Xiaoming Yang

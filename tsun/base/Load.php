@@ -13,7 +13,7 @@
         /**
          * autoload method for controllers and models
          */
-        protected static function autoload($className){
+        protected static function autoloadMC($className){
 
             if(strpos($className,'Controller') !== false && strpos($className,'Controller') > 0){
                 $controllerArr = require(APP_PATH . SLASH . "conf/controllers.config.php");
@@ -25,8 +25,8 @@
                     throw new Exception("The requested controller doesn't exist.");
                 }
             }else if(strpos($className,'Model') !== false && strpos($className,'Model') > 0){
-                $controllerArr = require(APP_PATH . SLASH . "conf/controllers.config.php");
-                $action = substr($className,0,count($className)-11);
+                $modelArr = require(APP_PATH . SLASH . "conf/models.config.php");
+                $action = substr($className,0,count($className)-6);
                 $action = strtolower($action);
                 if(isset($controllerArr[$action])){
                     include APP_PATH.SLASH."controller".SLASH.$controllerArr[$action];
@@ -44,7 +44,7 @@
             $include_path = get_include_path();
             $include_path .= PATH_SEPARATOR.TSUN_PATH.SLASH."base";
             set_include_path($include_path);
-            spl_autoload_register('Load::autoload');
+            spl_autoload_register('Load::autoloadMC');
             spl_autoload_register('Load::autoLoadBase');
         }
     }

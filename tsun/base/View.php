@@ -29,7 +29,7 @@
 			
 			$viewName = trim($viewName,SLASH);
 			//the path may be configured here --to be finished
-			return APP_PATH."view".SLASH.$viewName.".php";
+			return APP_PATH.SLASH."view".SLASH.$viewName.".php";
 		}
 		
 		public function __get($propertyName){

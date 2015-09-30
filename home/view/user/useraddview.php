@@ -1,4 +1,4 @@
-<?php include APP_PATH."view/echoTable.php";?>
+<?php include APP_PATH."/view/echoTable.php";?>
 
 <!DOCTYPE html>
 <html>

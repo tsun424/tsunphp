@@ -6,6 +6,7 @@
  *	@Date	2015-09-30 14:11
  ************************************************************************
  *	update time			editor				updated information
+ *  2015-10-07          Xiaoming Yang       comment autoload model class part
  */
 
     class Load{
@@ -24,7 +25,8 @@
                 }else{
                     throw new Exception("The requested controller doesn't exist.");
                 }
-            }else if(strpos($className,'Model') !== false && strpos($className,'Model') > 0){
+            }/* 2015-10-07 comment this part, the model will be instanced by Model factory
+                else if(strpos($className,'Model') !== false && strpos($className,'Model') > 0){
                 $modelArr = require(APP_PATH . SLASH . "conf/models.config.php");
                 $action = substr($className,0,count($className)-6);
                 $action = strtolower($action);
@@ -33,7 +35,7 @@
                 }else{
                     throw new Exception("The requested model doesn't exist.");
                 }
-            }
+            }*/
         }
 
         protected static function autoloadBase($className){

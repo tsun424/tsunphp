@@ -7,7 +7,7 @@
 			$_REQUEST['aaa'] = array('Tom'=>'20','Lily'=>'27');
 			$this->view = View::build("user/useraddview");
 			//echo "add method is called.<br>";
-			//$this->redirect("login/login");
+			//$this->redirect("admin/admin");
 		}
 		public function init(){
 			//echo "init is called.<br>";

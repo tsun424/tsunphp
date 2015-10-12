@@ -1,6 +1,6 @@
 <?php
 /**
- *	Load basic classes and requested controllers and models
+ *	Load basic classes and requested controllers
  ************************************************************************
  *	@Author Xiaoming Yang
  *	@Date	2015-09-30 14:11
@@ -15,10 +15,9 @@
          * autoload method for controllers and models
          */
         protected static function autoloadMC($className){
-
             if(strpos($className,'Controller') !== false && strpos($className,'Controller') > 0){
                 $controllerArr = require(APP_PATH . SLASH . "conf/controllers.config.php");
-                $action = substr($className,0,count($className)-11);
+                $action = substr($className,0,strlen($className)-10);
                 $action = strtolower($action);
                 if(isset($controllerArr[$action])){
                     include APP_PATH.SLASH."controller".SLASH.$controllerArr[$action];

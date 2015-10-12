@@ -1,5 +1,4 @@
 <?php
-
 /**
  *	configuration files for all service controllers
  *  format: 'controllerName' => 'controller relative path'
@@ -11,8 +10,9 @@
  ************************************************************************
  *	update time			editor				updated information
  */
-return [
 
-    'user' => 'user/UserController.php',
-    'login' => 'admin/LoginController.php'
+return [
+    'login' => 'admin/LoginModel.php'
+
 ];
+

@@ -20,6 +20,6 @@
 
 		}
 		function index(){
-            $this->view = View::build('admin/login');
+            $this->view = View::build('admin/LoginView');
 		}
 	}

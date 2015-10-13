@@ -1,7 +1,7 @@
 <?php
 
 /**
- *	configuration files for all service controllers
+ *	configuration file for all service controllers
  *  format: 'controllerName' => 'controller relative path'
  *  example: 'user' => 'user/UserController.php'
  *  The path is relative to controller directory in APP_PATH
@@ -13,6 +13,5 @@
  */
 return [
 
-    'user' => 'user/UserController.php',
     'login' => 'admin/LoginController.php'
 ];

@@ -10,7 +10,7 @@
     <label for="username">User Name:</label>
     <input type="text" id="username" name="username" placeholder="User Name">
     <label for="userpwd">User Password:</label>
-    <input type="text" id="userpwd" name="userpwd" placeholder="User Password">
+    <input type="password" id="userpwd" name="userpwd" placeholder="User Password">
     <input type="submit" name="doSubmit" value="Login">
 </form>
 

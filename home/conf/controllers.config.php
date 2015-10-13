@@ -1,7 +1,7 @@
 <?php
 
 /**
- *	configuration file for all service controllers
+ *	The configuration file for all service controllers
  *  format: 'controllerName' => 'controller relative path'
  *  example: 'user' => 'user/UserController.php'
  *  The path is relative to controller directory in APP_PATH

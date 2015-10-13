@@ -1,9 +1,9 @@
 <?php
 /**
- *	configuration files for all service controllers
- *  format: 'controllerName' => 'controller relative path'
- *  example: 'user' => 'user/UserController.php'
- *  The path is relative to controller directory in APP_PATH
+ *	The configuration file for all service models
+ *  format: 'model name' => 'model relative path'
+ *  example: 'user' => 'user/UserModel.php'
+ *  The path is relative to model directory in APP_PATH
  ************************************************************************
  *	@Author Xiaoming Yang
  *	@Initial date	2015-09-30 14:24

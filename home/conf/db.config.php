@@ -1,6 +1,6 @@
 <?php
 /**
- *	configuration files of Database
+ *	The configuration file of Database
  ************************************************************************
  *	@Author Xiaoming Yang
  *	@Initial date	2015-10-12 20:55

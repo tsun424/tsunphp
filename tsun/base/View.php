@@ -6,7 +6,9 @@
 	*	@Initial date	2015-09-29 14:46
 	************************************************************************
 	*	update time			editor				updated information
-	*/
+    *   2015-10-27          Xiaoming Yang       1. delete the SLASH constant, use "/" directly
+
+     */
 	class View{
 		protected $viewFile;
 		
@@ -27,9 +29,9 @@
 		
 		protected static function getFilePath($viewName){
 			
-			$viewName = trim($viewName,SLASH);
+			$viewName = trim($viewName,"/");
 			//the path may be configured here --to be finished
-			return APP_PATH.SLASH."view".SLASH.$viewName.".php";
+			return APP_PATH."/view/".$viewName.".php";
 		}
 		
 		public function __get($propertyName){

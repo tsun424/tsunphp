@@ -8,6 +8,7 @@
 	*	@Initial date	28-09-2015 20:08
 	************************************************************************
 	*	update time			editor				updated information
+    *   2015-10-27          Xiaoming Yang       1. delete the SLASH constant, use "/" directly
 	*/
 	
 	class Controller{
@@ -22,12 +23,12 @@
 		*					 2. "user/index" -- redirect to index method of user module
 		*/
 		public function redirect($location){
-			$location = rtrim($location,SLASH);
+			$location = rtrim($location,"/");
 			$url = "";
-			if(strpos($location,SLASH)){
-				$url = $_SERVER['SCRIPT_NAME'].SLASH.$location;
+			if(strpos($location,"/")){
+				$url = $_SERVER['SCRIPT_NAME']."/".$location;
 			}else{
-				$url = dirname($_SERVER['REQUEST_URI']).SLASH.$location;
+				$url = dirname($_SERVER['REQUEST_URI'])."/".$location;
 			}
 			//echo "url = $url";
 			echo '<script>';

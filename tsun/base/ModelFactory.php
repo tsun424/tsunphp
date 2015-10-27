@@ -6,6 +6,7 @@
  *	@Date	2015-10-07 14:32
  ************************************************************************
  *	update time			editor				updated information
+ *   2015-10-27          Xiaoming Yang       1. delete the SLASH constant, use "/" directly
  */
 
 class ModelFactory {
@@ -29,16 +30,16 @@ class ModelFactory {
 
     protected static function getFilePath($modelName){
         $resultArr = array();
-        $modelArr = require(APP_PATH.SLASH."conf/models.config.php");
+        $modelArr = require(APP_PATH."/conf/models.config.php");
         if(isset($modelArr[$modelName])){
-            $pos = strrpos($modelArr[$modelName],SLASH);
+            $pos = strrpos($modelArr[$modelName],"/");
             if($pos !== false){
                 $modelFile = substr($modelArr[$modelName],$pos+1);
 
             }else{
                 $modelFile = $modelArr[$modelName];
             }
-            $modelFilePath = APP_PATH.SLASH."model".SLASH.$modelArr[$modelName];
+            $modelFilePath = APP_PATH."/model/".$modelArr[$modelName];
             $modelClass = substr($modelFile,0,strlen($modelFile)-4);
             if(file_exists($modelFilePath)){
                 $resultArr[] = $modelClass;

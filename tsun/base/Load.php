@@ -7,6 +7,7 @@
  ************************************************************************
  *	update time			editor				updated information
  *  2015-10-07          Xiaoming Yang       comment autoload model class part
+ *  2015-10-27          Xiaoming Yang       1. delete the SLASH constant, use "/" directly
  */
 
     class Load{
@@ -16,11 +17,11 @@
          */
         protected static function autoloadMC($className){
             if(strpos($className,'Controller') !== false && strpos($className,'Controller') > 0){
-                $controllerArr = require(APP_PATH . SLASH . "conf/controllers.config.php");
+                $controllerArr = require(APP_PATH."/conf/controllers.config.php");
                 $action = substr($className,0,strlen($className)-10);
                 $action = strtolower($action);
                 if(isset($controllerArr[$action])){
-                    include APP_PATH.SLASH."controller".SLASH.$controllerArr[$action];
+                    include APP_PATH."/controller/".$controllerArr[$action];
                 }else{
                     throw new Exception("The requested controller doesn't exist.");
                 }
@@ -43,7 +44,7 @@
 
         public static function registerAuto(){
             $include_path = get_include_path();
-            $include_path .= PATH_SEPARATOR.TSUN_PATH.SLASH."base";
+            $include_path .= PATH_SEPARATOR.TSUN_PATH."/base";
             set_include_path($include_path);
             spl_autoload_register('Load::autoloadMC');
             spl_autoload_register('Load::autoLoadBase');

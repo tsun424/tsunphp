@@ -6,6 +6,7 @@
  *	@Date	2015-10-12 22:04
  ************************************************************************
  *	update time			editor				updated information
+ *  11-26-2015          Xiaoming Yang       prevent SQL injection
  */
 
 class DB {
@@ -14,11 +15,13 @@ class DB {
 
     public function __construct(){
 
-        //$dbParams = require(APP_PATH.SLASH."conf/db.config.php");
-        $dbParams = require("E:/PHP/wamp/www/framework/home/conf/db.config.php");
+        $dbParams = require(APP_PATH."/conf/db.config.php");
+        //$dbParams = require("E:/PHP/wamp/www/framework/home/conf/db.config.php");
         $dsn = 'mysql:host='.$dbParams['mysql']['host'].';dbname='.$dbParams['mysql']['database'];
         $this->conn = new PDO($dsn, $dbParams['mysql']['username'], $dbParams['mysql']['password']);
         $this->conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        //disable emulation of prepared statements, prevent SQL injection
+        $this->conn->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
     }
 
     protected static function build(){

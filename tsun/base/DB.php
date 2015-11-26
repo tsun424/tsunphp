@@ -7,6 +7,7 @@
  ************************************************************************
  *	update time			editor				updated information
  *  11-26-2015          Xiaoming Yang       prevent SQL injection
+ *
  */
 
 class DB {

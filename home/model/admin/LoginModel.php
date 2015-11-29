@@ -11,12 +11,8 @@
 class LoginModel {
 
     public function login($userName,$password){
-        $sql = 'select * from t_pub_user where user_name = ? and user_pwd = ?';
+        $sql = 'select * from t_pub_user where userName = ? and userPwd = ?';
         $resultArr = DB::select($sql,[$userName,$password]);
-        if(count($resultArr)>0){
-            return "success";
-        }else{
-            return "failure";
-        }
+        return $resultArr;
     }
 }

@@ -50,6 +50,17 @@
 		
 		public function run(){
 			$method = (!empty($_REQUEST['rMethod']) ? $_REQUEST['rMethod'] : "index");
+            /**
+             *	check the session to confirm user validation
+             */
+
+            if(!empty($_REQUEST['rController']) && $_REQUEST['rController'] != 'login'){
+                session_start();
+                if(!isset($_SESSION['user'])) {
+                    self::redirect('login/index');
+                }
+            }
+
 			/**
 			*	try to call init method, init can be a filter method to do some check before real execution
 			*	sub class should declare init method if it is needed

@@ -8,7 +8,7 @@
 	*	@Initial date	28-09-2015 20:08
 	************************************************************************
 	*	update time			editor				updated information
-    *   2015-10-27          Xiaoming Yang       1. delete the SLASH constant, use "/" directly
+     *  28-11-2015          Xiaoming Yang       delete useless comment
 	*/
 	
 	class Controller{
@@ -16,7 +16,7 @@
 		protected $view;
 		
 		/**
-		*	redirect to views
+		*	redirect the request
 		*	
 		*	$location format:
 		*					 1. "index"	-- redirect to index method of current module
@@ -30,7 +30,6 @@
 			}else{
 				$url = dirname($_SERVER['REQUEST_URI'])."/".$location;
 			}
-			//echo "url = $url";
 			echo '<script>';
 			echo 'location="'.$url.'"';
 			echo '</script>'; 
@@ -68,9 +67,6 @@
 		
 		public function __destruct(){
 
-			/* $_REQUEST['a']=1;
-			include BASE_PATH."/home/controller/test.php"; */
-			
 			if($this->view instanceof View){
 				require $this->view->viewFile;
 			}

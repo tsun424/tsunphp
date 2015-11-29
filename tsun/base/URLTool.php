@@ -8,6 +8,7 @@
 	*	@Initial date	28-09-2015 20:08
 	************************************************************************
 	*	update time			editor				updated information
+     *  29-11-2015          Xiaoming Yang       add condition for handling get method request
 	*
 	*/
 	class URLTool{
@@ -17,10 +18,19 @@
 				$pathInfo = $_SERVER['PATH_INFO'];
 				
 				$requestArr = explode('/',trim($pathInfo,'/'));
-				//var_dump($requestArr);
+
 				if(count($pathInfo) != 0){
 					$_REQUEST['rController'] = $requestArr[0];
-					$_REQUEST['rMethod'] = (!empty($requestArr[1]) ? $requestArr[1] : 'index');	//default method is index
+                    if(!empty($requestArr[1])){
+                        $isGet = strpos($requestArr[1],'?');
+                        if($isGet){
+                            $_REQUEST['rMethod'] = substr($requestArr[1],0,$isGet);
+                        }else{
+                            $_REQUEST['rMethod'] = $requestArr[1];
+                        }
+                    }else{
+                        $_REQUEST['rMethod'] = 'index';     //default method is index
+                    }
 				}
 			}
 		}

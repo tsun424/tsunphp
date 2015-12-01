@@ -24,7 +24,7 @@ class LoginController extends Controller{
             $userAttr = $this->loginModel->login($userName,$userPwd);
             if(count($userAttr) > 0){
                 session_start();
-                $_SESSION['user'] = $userAttr;
+                $_SESSION['user'] = $userAttr[0];
                 parent::redirect("topic/listTopics");
             }else{
                 $this->view = View::build('failure');

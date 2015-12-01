@@ -6,9 +6,7 @@
 	*	@Initial date	2015-09-29 14:46
 	************************************************************************
 	*	update time			editor				updated information
-    *   2015-10-27          Xiaoming Yang       1. delete the SLASH constant, use "/" directly
-
-     */
+	*/
 	class View{
 		protected $viewFile;
 		
@@ -21,7 +19,7 @@
 			if(file_exists($viewFile)){
 				return new View($viewFile);
 			}else{
-				echo "The requested view doesn't exist.";
+				echo "The requested view $viewFile doesn't exist.";
 				//throw an exception here --to be finished
 			}
 			

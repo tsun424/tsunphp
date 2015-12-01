@@ -7,7 +7,7 @@
  ************************************************************************
  *	update time			editor				updated information
  *  2015-10-07          Xiaoming Yang       comment autoload model class part
- *  2015-10-27          Xiaoming Yang       1. delete the SLASH constant, use "/" directly
+ *  01-12-2015          Xiaoming Yang       optimise exception output
  */
 
     class Load{
@@ -17,13 +17,13 @@
          */
         protected static function autoloadMC($className){
             if(strpos($className,'Controller') !== false && strpos($className,'Controller') > 0){
-                $controllerArr = require(APP_PATH."/conf/controllers.config.php");
+                $controllerArr = require(APP_PATH . "/conf/controllers.config.php");
                 $action = substr($className,0,strlen($className)-10);
                 $action = strtolower($action);
                 if(isset($controllerArr[$action])){
                     include APP_PATH."/controller/".$controllerArr[$action];
                 }else{
-                    throw new Exception("The requested controller doesn't exist.");
+                    throw new Exception("The requested controller ".$action." doesn't exist.");
                 }
             }/* 2015-10-07 comment this part, the model will be instanced by Model factory
                 else if(strpos($className,'Model') !== false && strpos($className,'Model') > 0){

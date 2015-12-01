@@ -47,6 +47,19 @@ class DB {
         return $this->conn->query("select @p_result")->fetch(PDO::FETCH_ASSOC);
     }
 
+    /**
+     *  run insert, delete, update SQLs
+     * @param   $sql
+     * @param   $paramArr
+     * @return Array
+     */
+    protected function change($sql,$paramArr){
+        $stmt = $this->conn->prepare($sql);
+        return $stmt->execute($paramArr);
+    }
+
+
+
     public static function __callStatic($method,$args){
         $dbInstance = static::build();
 

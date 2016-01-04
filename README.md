@@ -19,9 +19,9 @@
 -	URL tool class
 -	DB tool class</p>
 <p><h3>5.	Log function</h3><br>
-- support log record for troubleshooting
+- Support log record for troubleshooting
 <p><h3>6.	Configurable</h3><br>
--	functions are configurable, such as Models, Controllers, db, log, etc.</p>
+-	Functions are configurable, such as Models, Controllers, db, log, etc.</p>
 
 <h1>Update Ongoing</h1>
 

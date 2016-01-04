@@ -13,9 +13,11 @@
 class LoginController extends Controller{
 
         private $loginModel;
+        private $log;
 
         public function __construct(){
             $this->loginModel = ModelFactory::build('login');
+            $this->log = new Logger();
         }
 
 		function login(){
@@ -25,7 +27,9 @@ class LoginController extends Controller{
             if(count($userAttr) > 0){
                 session_start();
                 $_SESSION['user'] = $userAttr[0];
-                parent::redirect("topic/listTopics");
+                //parent::redirect("topic/listTopics");
+                $this->log->debug($userAttr[0]['userName']." login successfully.");
+                $this->view = View::build('welcome');
             }else{
                 $this->view = View::build('failure');
             }

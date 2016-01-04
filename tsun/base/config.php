@@ -12,5 +12,6 @@ return [
     'page' => [
         'rowNum' => 20,             //how many rows in one page
         'listNum' => 9             //how many pagination list, if it is set to 5, the page will show 1 2 3 4 5
-    ]
+    ],
+    'timezone' => 'NZ'
 ];

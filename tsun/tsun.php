@@ -20,6 +20,10 @@
     $root_path = substr(ROOT_FILE,0,strpos(ROOT_FILE,'/',1));
     define("ROOT_PATH",$root_path);      //the root path of the project, it is for js and css import
 
+    //set timezone from config.php
+    $configArr = require('base/config.php');
+    date_default_timezone_set($configArr['timezone']);
+
     require(TSUN_PATH."/base/Load.php");
     include TSUN_PATH."/base/PublicFunctions.php";  //include public functions
 

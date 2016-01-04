@@ -33,6 +33,7 @@
     <div class="container">
         <div class="content">
             <h1>Welcome to Tsun Framework</h1>
+            <h2><?php echo $_SESSION['user']['userName']; ?></h2>
         </div>
     </div>
 

@@ -1,4 +1,4 @@
-	<?php
+<?php
 	/**
 	*	handle the request information, request format should be like: ./index.php/controller/method
 	*	put the requested controller information to $_REQUEST['rController']

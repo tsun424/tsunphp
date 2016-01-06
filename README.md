@@ -1,8 +1,15 @@
 <h1>Introduction</h1>
 
 <p>1.	Tsun Framework is a super light weight PHP framework</p>
-<p>2.	Tsun Framework is designed and developed based on object-oriented programming paradigm</p>
+<p>2.	Tsun Framework is designed and developed based on object-oriented programming</p>
 <p>3.	Tsun Framework follows on MVC design pattern</p>
+
+<h1>Environment</h1>
+
+<p>1.	PHP 5.5</p>
+<p>2.	HTML5 and CSS3</p>
+<p>3.	Bootstrap 3.3.5</p>
+<p>4.	JQuery 1.11.3</p>
 
 <h1>Features</h1>
 

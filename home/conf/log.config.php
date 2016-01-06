@@ -1,5 +1,5 @@
 <?php
 return [
     'level' => 'DEBUG',
-    'file' => 'log/tsun.log'
+    'file' => 'logs/tsun.log'
 ];

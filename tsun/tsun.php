@@ -21,7 +21,7 @@
     define("ROOT_PATH",$root_path);      //the root path of the project, it is for js and css import
 
     //set timezone from config.php
-    $configArr = require('base/config.php');
+    $configArr = require('base/sys.config.php');
     date_default_timezone_set($configArr['timezone']);
 
     require(TSUN_PATH."/base/Load.php");

@@ -23,7 +23,7 @@ class Pagination {
      */
     public function __construct(){
         //get configuration about list number
-        $config = require("config.php");
+        $config = require("sys.config.php");
         $this->rowNum = isset($config['page']['rowNum']) ? $config['page']['rowNum'] : 20;
         $this->listNum = isset($config['page']['listNum']) ? $config['page']['listNum'] : 11;
 

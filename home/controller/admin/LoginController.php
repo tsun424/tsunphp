@@ -13,11 +13,9 @@
 class LoginController extends Controller{
 
         private $loginModel;
-        private $log;
 
         public function __construct(){
             $this->loginModel = ModelFactory::build('login');
-            $this->log = new Logger();
         }
 
 		function login(){

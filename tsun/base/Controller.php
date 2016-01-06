@@ -9,12 +9,13 @@
 	************************************************************************
 	*	update time			editor				updated information
      *  28-11-2015          Xiaoming Yang       delete useless comment
+     *  07-01-2016          Xiaoming Yang       add log function
 	*/
 	
 	class Controller{
 		
 		protected $view;
-		
+		protected $log;
 		/**
 		*	redirect the request
 		*	
@@ -42,6 +43,11 @@
 		public function index(){
 			
 		}
+
+        public function init(){
+            //instantiate the log object, sub controllers can use it to record logs directly
+            $this->log = new Logger();
+        }
 		
 		/**
 		*	the driven method of a controller, will be called in tsun.php to run a controller
@@ -50,10 +56,8 @@
 		
 		public function run(){
 			$method = (!empty($_REQUEST['rMethod']) ? $_REQUEST['rMethod'] : "index");
-            /**
-             *	check the session to confirm user validation
-             */
 
+            //check the session to confirm user validation
             if(!empty($_REQUEST['rController']) && $_REQUEST['rController'] != 'login'){
                 session_start();
                 if(!isset($_SESSION['user'])) {
@@ -61,18 +65,14 @@
                 }
             }
 
-			/**
-			*	try to call init method, init can be a filter method to do some check before real execution
-			*	sub class should declare init method if it is needed
-			*
-			*/
+			//try to call init method to initial something
 			if(method_exists($this,"init")){
 				$this->init();
 			}
 			if(method_exists($this,$method)){
 				$this->$method();
 			}else{
-				echo "The reuqested method doesn't exist!";
+				echo "The requested method doesn't exist!";
 			}
 		}
 		

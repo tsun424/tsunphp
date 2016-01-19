@@ -45,6 +45,7 @@
         public static function registerAuto(){
             $include_path = get_include_path();
             $include_path .= PATH_SEPARATOR.TSUN_PATH."/base";
+            $include_path .= PATH_SEPARATOR.APP_PATH."/base";
             set_include_path($include_path);
             spl_autoload_register('Load::autoloadMC');
             spl_autoload_register('Load::autoLoadBase');

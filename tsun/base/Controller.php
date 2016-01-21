@@ -58,7 +58,7 @@
 			$method = (!empty($_REQUEST['rMethod']) ? $_REQUEST['rMethod'] : "index");
 
             //check the session to confirm user validation
-            if(!empty($_REQUEST['rController']) && $_REQUEST['rController'] != 'login'){
+            if(!empty($_REQUEST['rController']) && ($_REQUEST['rController'] != 'login' && $method !='login')){
                 session_start();
                 if(!isset($_SESSION['user'])) {
                     self::redirect('login/index');

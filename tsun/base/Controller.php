@@ -10,7 +10,8 @@
 	*	update time			editor				updated information
      *  28-11-2015          Xiaoming Yang       delete useless comment
      *  07-01-2016          Xiaoming Yang       add log function
-	 *  21-01-2016			Xiaoming Yang		solve session start issue
+     *  25-01-2016          Xiaoming Yang       solve the session validation bug
+     *  30-01-2016          Xiaoming Yang       check session status by !isset($_SESSION)
 	*/
 	
 	class Controller{
@@ -59,8 +60,25 @@
 			$method = (!empty($_REQUEST['rMethod']) ? $_REQUEST['rMethod'] : "index");
 
             //check the session to confirm user validation
-			//20160121	add one condition
+            /*
             if(!empty($_REQUEST['rController']) && ($_REQUEST['rController'] != 'login' && $method !='login')){
+                session_start();
+                if(!isset($_SESSION['user'])) {
+                    self::redirect('login/index');
+                }
+            }
+            if(!empty($_REQUEST['rController']) && !($_REQUEST['rController'] == 'login' && $method =='index') && !($_REQUEST['rController'] == 'login' && $method =='login')){
+                echo "check session before"."<br>";
+                if(!isset($_SESSION)){
+                    session_start();
+                }
+                echo "check session before"."<br>";
+                if(!isset($_SESSION['user'])) {
+                    self::redirect('login/index');
+                }
+            }*/
+            if(!empty($_REQUEST['rController']) && !isset($_SESSION)){
+
                 session_start();
                 if(!isset($_SESSION['user'])) {
                     self::redirect('login/index');

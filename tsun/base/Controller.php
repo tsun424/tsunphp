@@ -80,7 +80,7 @@
             if(!empty($_REQUEST['rController']) && !isset($_SESSION)){
 
                 session_start();
-                if(!isset($_SESSION['user'])) {
+                if(!isset($_SESSION['user']) && !($_REQUEST['rController'] == 'login' && $method =='index') && !($_REQUEST['rController'] == 'login' && $method =='login')) {
                     self::redirect('login/index');
                 }
             }
